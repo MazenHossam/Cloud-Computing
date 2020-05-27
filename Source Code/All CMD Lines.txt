@@ -18,5 +18,3 @@ ec2-user wheel www
 [ec2-user ~]$ nano dbinfo.inc
 
 [ec2-user ~]$ cd /var/www/html
-[ec2-user ~]$ >SamplePage.php
-[ec2-user ~]$ nano SamplePage.php
