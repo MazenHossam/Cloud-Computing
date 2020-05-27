@@ -1,0 +1,22 @@
+[ec2-user ~]$ sudo yum update -y
+[ec2-user ~]$ sudo yum install -y httpd24 php56 php56-mysqlnd
+[ec2-user ~]$ sudo service httpd start
+[ec2-user ~]$ sudo chkconfig httpd on
+[ec2-user ~]$ sudo groupadd www
+[ec2-user ~]$ sudo usermod -a -G www ec2-user
+[ec2-user ~]$ exit
+[ec2-user ~]$ groups
+ec2-user wheel www
+[ec2-user ~]$ sudo chgrp -R www /var/www
+[ec2-user ~]$ sudo chmod 2775 /var/www
+[ec2-user ~]$ find /var/www -type d -exec sudo chmod 2775 {} +
+[ec2-user ~]$ find /var/www -type f -exec sudo chmod 0664 {} +
+[ec2-user ~]$ cd /var/www
+[ec2-user ~]$ mkdir inc
+[ec2-user ~]$ cd inc
+[ec2-user ~]$ >dbinfo.inc
+[ec2-user ~]$ nano dbinfo.inc
+
+[ec2-user ~]$ cd /var/www/html
+[ec2-user ~]$ >SamplePage.php
+[ec2-user ~]$ nano SamplePage.php
